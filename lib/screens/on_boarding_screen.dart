@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -43,14 +44,23 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          actions: const [
+          actions: [
             Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Skip',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20,
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignInScreen(),
+                      ));
+                },
+                child: const Text(
+                  'Skip',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
                 ),
               ),
             )
@@ -90,12 +100,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               }),
             ),
             (currentPage == (onBoardingData.length - 1))
-                ? const Text(
-                    'Get Started',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: Color.fromRGBO(248, 55, 88, 1),
+                ? GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignInScreen(),
+                          ));
+                    },
+                    child: const Text(
+                      'Get Started',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Color.fromRGBO(248, 55, 88, 1),
+                      ),
                     ),
                   )
                 : TextButton(

@@ -1,4 +1,4 @@
-import 'package:ecommerce/screens/splash_screen.dart';
+import 'package:ecommerce/screens/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,7 +18,7 @@ class _LogoScreenState extends State<LogoScreen> {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
+          builder: (context) => const OnBoardingScreen(),
         ),
       );
     });
