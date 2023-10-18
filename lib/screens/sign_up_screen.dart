@@ -1,8 +1,7 @@
-import 'package:ecommerce/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class SignInScreen extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(bottom: 32, right: 185),
             child: Text(
-              'Welcome\nBack!',
+              'Create an\naccount',
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
             ),
           ),
@@ -28,7 +27,6 @@ class SignInScreen extends StatelessWidget {
                     Radius.circular(10),
                   ),
                 ),
-                // contentPadding: EdgeInsets.only(left: 5, right: 20),
               ),
             ),
           ),
@@ -38,12 +36,6 @@ class SignInScreen extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Password',
-                counterText: 'Forget Password?',
-                
-                counterStyle: TextStyle(
-                    color: Color.fromRGBO(248, 55, 88, 1),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 13),
                 prefixIcon: Icon(Icons.lock),
                 suffixIcon: Icon(Icons.preview),
                 border: OutlineInputBorder(
@@ -51,7 +43,22 @@ class SignInScreen extends StatelessWidget {
                     Radius.circular(10),
                   ),
                 ),
-                // contentPadding: EdgeInsets.only(left: 30, right: 10),
+              ),
+            ),
+          ),
+          const SizedBox(height: 30),
+          const SizedBox(
+            width: 345,
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Password',
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.preview),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
               ),
             ),
           ),
@@ -66,7 +73,7 @@ class SignInScreen extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                     color: Color.fromRGBO(248, 55, 88, 1)),
                 child: const Text(
-                  'Login',
+                  'Create Account',
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
@@ -113,7 +120,7 @@ class SignInScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Create An Account',
+                'I Already Have an Account',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
@@ -129,7 +136,7 @@ class SignInScreen extends StatelessWidget {
                       ));
                 },
                 child: const Text(
-                  'Sign Up',
+                  'Login',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,

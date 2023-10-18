@@ -1,3 +1,5 @@
+import 'package:ecommerce/screens/get_started_screen.dart';
+import 'package:ecommerce/screens/homepage_screen.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -105,7 +107,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SignInScreen(),
+                            builder: (context) => const HomepageScreen(),
                           ));
                     },
                     child: const Text(
