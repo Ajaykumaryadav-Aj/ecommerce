@@ -1,4 +1,3 @@
-import 'package:ecommerce/screens/get_started_screen.dart';
 import 'package:ecommerce/screens/homepage_screen.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
