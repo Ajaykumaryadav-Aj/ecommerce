@@ -42,124 +42,144 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignInScreen(),
-                      ));
-                },
-                child: const Text(
-                  'Skip',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignInScreen(),
+                        ));
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
+              )
+            ],
+          ),
+          bottomNavigationBar: IntrinsicHeight(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: currentPage == onBoardingData.length - 3
+                        ? const Text('')
+                        : TextButton(
+                            onPressed: () {
+                              pageController.previousPage(
+                                  duration: const Duration(microseconds: 200),
+                                  curve: Curves.linear);
+                            },
+                            child: const Text(
+                              'Prev',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Color.fromRGBO(196, 196, 196, 1),
+                              ),
+                            ),
+                          ),
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(onBoardingData.length, (index) {
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        height: 8,
+                        width: (index == currentPage) ? 40 : 10,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: (index == currentPage)
+                                ? Colors.black
+                                : Colors.grey),
+                      );
+                    }),
+                  ),
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: (currentPage == (onBoardingData.length - 1))
+                        ? TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HomepageScreen(),
+                                  ));
+                            },
+                            child: const Text(
+                              'Get Started',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Color.fromRGBO(248, 55, 88, 1),
+                              ),
+                            ),
+                          )
+                        : TextButton(
+                            onPressed: () {
+                              pageController.nextPage(
+                                  duration: const Duration(milliseconds: 200),
+                                  curve: Curves.linear);
+                            },
+                            child: const Text(
+                              'Next',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Color.fromRGBO(248, 55, 88, 1),
+                              ),
+                            ),
+                          ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          body: Stack(
+            children: [
+              PageView.builder(
+                onPageChanged: onChanged,
+                scrollDirection: Axis.horizontal,
+                controller: pageController,
+                itemCount: onBoardingData.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      SvgPicture.asset(onBoardingData[index]['image']),
+                      Text(
+                        onBoardingData[index]['title'],
+                        style: const TextStyle(
+                            fontSize: 34, fontWeight: FontWeight.w800),
+                      ),
+                      ConstrainedBox(
+                          constraints: const BoxConstraints.expand(
+                              height: 72, width: 340),
+                          child: Text(onBoardingData[index]['Description']))
+                    ],
+                  );
+                },
               ),
-            )
-          ],
-        ),
-        bottomNavigationBar: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            currentPage == onBoardingData.length - 3
-                ? const Text('')
-                : TextButton(
-                    onPressed: () {
-                      pageController.previousPage(
-                          duration: const Duration(microseconds: 200),
-                          curve: Curves.linear);
-                    },
-                    child: const Text(
-                      'Prev',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Color.fromRGBO(196, 196, 196, 1),
-                      ),
-                    ),
-                  ),
-            Row(
-              children: List.generate(onBoardingData.length, (index) {
-                return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 5),
-                  height: 10,
-                  width: (index == currentPage) ? 20 : 10,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color:
-                          (index == currentPage) ? Colors.black : Colors.grey),
-                );
-              }),
-            ),
-            (currentPage == (onBoardingData.length - 1))
-                ? GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomepageScreen(),
-                          ));
-                    },
-                    child: const Text(
-                      'Get Started',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Color.fromRGBO(248, 55, 88, 1),
-                      ),
-                    ),
-                  )
-                : TextButton(
-                    onPressed: () {
-                      pageController.nextPage(
-                          duration: const Duration(milliseconds: 200),
-                          curve: Curves.linear);
-                    },
-                    child: const Text(
-                      'Next',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Color.fromRGBO(248, 55, 88, 1),
-                      ),
-                    ),
-                  ),
-          ],
-        ),
-        body: Stack(
-          children: [
-            PageView.builder(
-              onPageChanged: onChanged,
-              scrollDirection: Axis.horizontal,
-              controller: pageController,
-              itemCount: onBoardingData.length,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    SvgPicture.asset(onBoardingData[index]['image']),
-                    Text(
-                      onBoardingData[index]['title'],
-                      style: const TextStyle(
-                          fontSize: 34, fontWeight: FontWeight.w800),
-                    ),
-                    ConstrainedBox(
-                        constraints:
-                            const BoxConstraints.expand(height: 72, width: 340),
-                        child: Text(onBoardingData[index]['Description']))
-                  ],
-                );
-              },
-            ),
-          ],
-        ));
+            ],
+          )),
+    );
   }
 }

@@ -124,12 +124,14 @@ class _HomepageScreenState extends State<HomepageScreen> {
                   padding: const EdgeInsets.only(top: 110, left: 17),
                   child: TextButton(
                       style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(6),
-                                      side: const BorderSide(
-                                          color: Colors.white)))),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                            side: const BorderSide(color: Colors.white),
+                          ),
+                        ),
+                      ),
                       onPressed: () {},
                       child: const Text(
                         'Shop Now ->',
@@ -174,7 +176,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                               Text('22h 55m 20s remaining')
                             ],
                           ),
-                        )
+                        ),
                       ],
                     )),
                 // const Text('Deal of the Day'),
