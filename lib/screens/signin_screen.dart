@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/forget_password_screen.dart';
 import 'package:ecommerce/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -37,12 +38,6 @@ class SignInScreen extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Password',
-                counterText: 'Forget Password?',
-                
-                counterStyle: TextStyle(
-                    color: Color.fromRGBO(248, 55, 88, 1),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 13),
                 prefixIcon: Icon(Icons.lock),
                 suffixIcon: Icon(Icons.preview),
                 border: OutlineInputBorder(
@@ -52,6 +47,24 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 230),
+            child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgetPasswordScreen(),
+                      ));
+                },
+                child: const Text(
+                  'Forget Password?',
+                  style: TextStyle(
+                    color: Color.fromRGBO(248, 55, 88, 1),
+                    fontWeight: FontWeight.w400,
+                  ),
+                )),
           ),
           const SizedBox(height: 40),
           InkWell(
