@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/bottom_bar.dart';
 import 'package:ecommerce/screens/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const LogoScreen(),
-      home: const WishListScreen(),
+      // home: const WishListScreen(),
+      home: BottomBarScreen(),
     );
   }
 }

@@ -533,32 +533,32 @@ class _HomepageScreenState extends State<HomepageScreen> {
               Image.asset('assets/Component 53.png')
             ]),
       ),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.home),
-            
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite_border_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.shop_2_outlined),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.settings),
-          )
-        ],
-      ),
+      // bottomNavigationBar: Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: [
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Icon(Icons.home),
+
+      //     ),
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Icon(Icons.favorite_border_outlined),
+      //     ),
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Icon(Icons.shop_2_outlined),
+      //     ),
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Icon(Icons.search),
+      //     ),
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Icon(Icons.settings),
+      //     )
+      //   ],
+      // ),
     );
   }
 }
