@@ -1,4 +1,4 @@
-import 'package:ecommerce/screens/homepage_screen.dart';
+import 'package:ecommerce/screens/bottom_bar.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,19 +23,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     {
       'image': 'assets/fashion shop-rafiki 1.svg',
       'title': 'Choose Product',
-      'Description':
+      'description':
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
     },
     {
       'image': 'assets/Sales consulting-pana 1.svg',
       'title': 'Make Payment',
-      'Description':
+      'description':
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.'
     },
     {
       'image': 'assets/Shopping bag-rafiki 1.svg',
       'title': 'Get Your Order',
-      'Description':
+      'description':
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.'
     }
   ];
@@ -122,7 +122,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const HomepageScreen(),
+                                        const BottomBarScreen(),
                                   ));
                             },
                             child: const Text(
@@ -173,7 +173,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ConstrainedBox(
                           constraints: const BoxConstraints.expand(
                               height: 72, width: 340),
-                          child: Text(onBoardingData[index]['Description']))
+                          child: Text(onBoardingData[index]['description']))
                     ],
                   );
                 },

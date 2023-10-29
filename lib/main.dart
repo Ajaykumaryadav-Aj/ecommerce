@@ -1,5 +1,4 @@
-import 'package:ecommerce/screens/bottom_bar.dart';
-import 'package:ecommerce/screens/wish_list_screen.dart';
+import 'package:ecommerce/screens/logo_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,9 +19,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const LogoScreen(),
+      home: const LogoScreen(),
       // home: const WishListScreen(),
-      home: BottomBarScreen(),
+      // home: BottomBarScreen(),
     );
   }
 }

@@ -14,28 +14,30 @@ class BottomBarScreen extends StatefulWidget {
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
+  bool selectBottom = true;
   final controller = PersistentTabController(initialIndex: 0);
   List<Widget> _buildScreen() {
     return [
       const HomepageScreen(),
       const WishListScreen(),
       const ShopScreen(),
-      const Text('message'),
-      const Text('setting')
+      const Center(child: Text('message')),
+      const Center(child: Text('setting')),
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarItem() {
     return [
       PersistentBottomNavBarItem(
-          icon: const Icon(
-            Icons.home,
-            color: Colors.red,
-          ),
-          inactiveIcon: const Icon(
-            Icons.home,
-            color: Colors.black,
-          )),
+        icon: const Icon(
+          Icons.home,
+          color: Colors.red,
+        ),
+        inactiveIcon: const Icon(
+          Icons.home,
+          color: Colors.black,
+        ),
+      ),
       PersistentBottomNavBarItem(
           icon: const Icon(Icons.favorite_border_outlined, color: Colors.red),
           inactiveIcon: const Icon(
@@ -47,7 +49,10 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           inactiveIcon: const Icon(
             Icons.shop_outlined,
             color: Colors.black,
-          )),
+          ),
+          title: 'shop',
+          textStyle: TextStyle(
+              color: (selectBottom == true) ? Colors.black : Colors.red)),
       PersistentBottomNavBarItem(
           icon: const Icon(Icons.search, color: Colors.red),
           inactiveIcon: const Icon(
