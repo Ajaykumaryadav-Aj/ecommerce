@@ -29,42 +29,52 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   List<PersistentBottomNavBarItem> _navBarItem() {
     return [
       PersistentBottomNavBarItem(
-        icon: const Icon(
-          Icons.home,
-          color: Colors.red,
-        ),
-        inactiveIcon: const Icon(
-          Icons.home,
-          color: Colors.black,
-        ),
-      ),
+          icon: const Icon(
+            Icons.home,
+            color: Colors.red,
+          ),
+          inactiveIcon: const Icon(
+            Icons.home,
+            color: Colors.black,
+          ),
+          title: 'Home',
+          activeColorPrimary: Colors.pink),
       PersistentBottomNavBarItem(
           icon: const Icon(Icons.favorite_border_outlined, color: Colors.red),
           inactiveIcon: const Icon(
             Icons.favorite_outline_outlined,
             color: Colors.black,
-          )),
+          ),
+          title: 'Wishlist',
+          activeColorPrimary: Colors.pink),
       PersistentBottomNavBarItem(
-          icon: const Icon(Icons.shop_outlined, color: Colors.red),
+          icon: const Icon(Icons.shop_outlined, color: Colors.black),
           inactiveIcon: const Icon(
             Icons.shop_outlined,
             color: Colors.black,
           ),
-          title: 'shop',
-          textStyle: TextStyle(
-              color: (selectBottom == true) ? Colors.black : Colors.red)),
+
+          // inactiveColorPrimary: Colors.black,
+          activeColorPrimary: Colors.pink
+          // textStyle: TextStyle(
+          //     color: (selectBottom == true) ? Colors.black : Colors.red),
+          ),
       PersistentBottomNavBarItem(
           icon: const Icon(Icons.search, color: Colors.red),
           inactiveIcon: const Icon(
             Icons.search,
             color: Colors.black,
-          )),
+          ),
+          title: 'Search',
+          activeColorPrimary: Colors.pink),
       PersistentBottomNavBarItem(
           icon: const Icon(Icons.settings, color: Colors.red),
           inactiveIcon: const Icon(
             Icons.settings,
             color: Colors.black,
-          ))
+          ),
+          title: 'Setting',
+          activeColorPrimary: Colors.pink)
     ];
   }
 

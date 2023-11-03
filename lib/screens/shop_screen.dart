@@ -152,13 +152,57 @@ class _ShopScreenState extends State<ShopScreen> {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 250),
-          child: const Text(
+        const Padding(
+          padding: EdgeInsets.only(right: 250),
+          child: Text(
             'Product Details',
             style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
           ),
+        ),
+        const SizedBox(
+          width: 362,
+          height: 133,
+          child: Text(
+            'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More',
+            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            OutlinedButton(
+                style: ButtonStyle(
+                  shape: MaterialStatePropertyAll(
+                    BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                ),
+                onPressed: () {},
+                child: const Row(
+                  children: [
+                    Icon(Icons.abc),
+                    Text('Nearest Store'),
+                  ],
+                )),
+            OutlinedButton(
+                onPressed: () {},
+                child: const Row(
+                  children: [
+                    Icon(Icons.abc),
+                    Text('VIP'),
+                  ],
+                )),
+            OutlinedButton(
+                onPressed: () {},
+                child: const Row(
+                  children: [
+                    Icon(Icons.abc),
+                    Text('Return policy'),
+                  ],
+                )),
+          ],
         )
       ]),
     );
